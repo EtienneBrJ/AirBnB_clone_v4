@@ -127,3 +127,6 @@ function generateAmenities(amenities) {
     });
   });
   
+  $('span').click(function (){
+    
+  });
