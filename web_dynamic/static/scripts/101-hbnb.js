@@ -34,6 +34,17 @@ function generateAmenities(amenities) {
   
     return article;
   }
+
+  function generateReview(reviews) {
+    const review = $('<ul></ul>');
+    reviews.forEach(review => {
+      const userDate = $('<h3></h3>').text('From Bob Dylan le 25 Septembre 2021')
+      const textReview = $('<p></p>').text(review.text)
+      const li = $('<li></li>').append(userDate).append(textReview);
+      review.append();
+    });
+      return review;
+  }
   
   (function ($) {
     $.fn.populateTable = function (table, destElem) {
@@ -125,8 +136,14 @@ function generateAmenities(amenities) {
             });
           });
     });
-  });
-  
-  $('span').click(function (){
-    
+
+    // $('span').click(function () {
+    //   $.get(
+    //     {
+    //       url: 'http://0.0.0.0:5001/api/v1/places/{place_id}/reviews',
+    //       dataType: 'json',
+    //       contentType: 'application/json; charset=utf-8'
+    //     }
+    //   )
+    // })
   });
