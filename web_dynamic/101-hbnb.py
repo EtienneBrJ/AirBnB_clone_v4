@@ -6,6 +6,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.user import User
+from models.review import Review
 from os import environ
 from flask import Flask, render_template
 import uuid
@@ -37,15 +38,17 @@ def hbnb_un():
 
     places = storage.all(Place).values()
     places = sorted(places, key=lambda k: k.name)
-    cache_id = uuid.uuid4()
 
-    users = storage.all(User).values()
+    reviews = storage.all(Review).values()
+    reviews = sorted(places, key=lambda k: k.name)
+    
+    cache_id = uuid.uuid4()
 
     return render_template('101-hbnb.html',
                            states=st_ct,
                            amenities=amenities,
                            places=places,
-                           users=users,
+                           reviews=reviews,
 			   cache_id=cache_id)
 
 
