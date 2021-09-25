@@ -40,7 +40,7 @@ def hbnb_un():
     places = sorted(places, key=lambda k: k.name)
 
     reviews = storage.all(Review).values()
-    reviews = sorted(places, key=lambda k: k.name)
+    reviews = sorted(reviews, key=lambda k: k.name)
     
     cache_id = uuid.uuid4()
 
